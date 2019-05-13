@@ -1,5 +1,6 @@
 class Song
   attr_accessor :name
+<<<<<<< HEAD
   attr_reader :artist, :genre
   @@all = []
 
@@ -7,6 +8,12 @@ class Song
     @name = name
     self.artist = artist unless artist.nil?
     self.genre = genre unless genre.nil?
+=======
+  @@all = []
+
+  def initialize(name)
+    @name = name
+>>>>>>> 33f448f1cd26f616489ea49294e3b4e72862d950
   end
 
   def self.all
@@ -21,6 +28,7 @@ class Song
     @@all << self
   end
 
+<<<<<<< HEAD
   def artist=(artist)
     @artist=artist
     artist.add_song(self)
@@ -56,6 +64,11 @@ class Song
 
   def self.create_from_filename(filename)
     self.new_from_filename(filename).tap(&:save)
+=======
+  def self.create(name)
+    Song.new(name)
+    Song.save
+>>>>>>> 33f448f1cd26f616489ea49294e3b4e72862d950
   end
 
 end
